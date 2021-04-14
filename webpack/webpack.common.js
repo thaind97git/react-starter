@@ -54,6 +54,16 @@ module.exports = {
         exclude: [/node_modules/],
       },
       {
+        test: /\.svg/,
+        use: {
+          loader: 'svg-url-loader',
+        },
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
+      {
         test: cssRegex,
         use: getStyleLoaders(),
       },
@@ -63,16 +73,16 @@ module.exports = {
       },
       {
         exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         loader: 'file-loader',
         options: {
           name: 'static/media/[name].[hash:8].[ext]',
         },
       },
-      {
-        test: /\.(png|svg|jpg|gif|ico)$/,
-        use: ['file-loader?name=[name].[ext]'],
-      },
+      // {
+      //   test: /\.(png|svg|jpg|gif|ico)$/,
+      //   use: ['file-loader?name=[name].[ext]'],
+      // },
     ],
   },
   resolve: {
