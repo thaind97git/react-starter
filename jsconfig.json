@@ -3,7 +3,7 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "_static/*": ["public/static/*"],
+      "@/static/*": ["public/static/*"],
       "@/*": ["src/*"]
     }
   },

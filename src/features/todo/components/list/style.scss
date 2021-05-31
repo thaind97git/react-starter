@@ -1,0 +1,13 @@
+.todo-list {
+  &__item {
+    list-style: square;
+    padding: 12px 0px;
+    display: flex;
+    align-items: center;
+
+    &__icon {
+      margin: 0px 8px;
+      cursor: pointer;
+    }
+  }
+}

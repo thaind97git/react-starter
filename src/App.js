@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import { Helmet } from 'react-helmet-async';
 
 import Layout from '@/layouts';
-import PageLoading from '@/components/Page-Loading';
+import PageLoading from '@/components/page-loading';
 
 // multi language
 // import '@/locales'

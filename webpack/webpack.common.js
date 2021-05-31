@@ -87,7 +87,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      _static: path.resolve(__dirname, '../public/static'),
+      '@/static': path.resolve(__dirname, '../public/static'),
       '@': path.resolve(__dirname, '../src'),
     },
   },

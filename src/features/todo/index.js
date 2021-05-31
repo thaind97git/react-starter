@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { getTodoList } from '@/apis/todo';
-import Button from '@/components/Button';
-import useGetRequest from '@/hooks/useGetRequest';
 
-const TodoList = () => {
+import Button from '@/components/button';
+import TodoList from './components/list';
+import useGet from '@/hooks/useGet';
+
+const TodoFeature = () => {
   const history = useHistory();
   const [refreshTodo, setRefreshTodo] = useState(false);
 
-  const { data: todoList = [] } = useGetRequest({
-    promiseFunction: getTodoList,
+  const { data: todoList = [] } = useGet({
+    func: getTodoList,
     refresh: refreshTodo,
   });
 
@@ -26,13 +28,9 @@ const TodoList = () => {
       <Button primary onClick={() => setRefreshTodo(prev => !prev)}>
         Re-call todo
       </Button>
-      <ul>
-        {todoList.map(todo => {
-          return <li key={todo.id}>{todo.title}</li>;
-        })}
-      </ul>
+      <TodoList todos={todoList} />
     </div>
   );
 };
 
-export default TodoList;
+export default TodoFeature;

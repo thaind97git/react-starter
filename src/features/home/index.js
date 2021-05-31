@@ -1,12 +1,12 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import Button from '@/components/Button';
+import Button from '@/components/button';
 
 const Home = () => {
   const history = useHistory();
   return (
     <div className="row">
-      <Button warning onClick={() => history.push('/todo-list')}>
+      <Button warning onClick={() => history.push('/todos')}>
         Go to todo-list
       </Button>
     </div>

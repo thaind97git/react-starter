@@ -1,7 +1,7 @@
 import { getLoading } from '@/store/selectors';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Spinner from '../Spinner';
+import Spinner from '../spinner';
 
 const PageLoading = ({ show }) => {
   const loading = useSelector(getLoading);
