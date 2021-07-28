@@ -56,22 +56,15 @@ const getStyleLoaders = (cssOptions = {}, preProcessor) => {
       },
     },
   ].filter(Boolean);
-  if (preProcessor) {
-    loaders.push(
-      // {
-      //   loader: require.resolve('resolve-url-loader'),
-      //   options: {
-      //     sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
-      //     root: appSrc
-      //   }
-      // },
-      {
-        loader: require.resolve(preProcessor),
-        options: {
-          sourceMap: true,
-        },
+  if (preProcessor && typeof preProcessor === 'string') {
+    loaders.push({
+      loader: require.resolve(preProcessor),
+      options: {
+        sourceMap: isEnvProduction,
       },
-    );
+    });
+  } else if (preProcessor) {
+    loaders.push(preProcessor);
   }
   return loaders;
 };

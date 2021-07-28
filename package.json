@@ -7,7 +7,9 @@
     "postinstall": "node .postinstall",
     "test": "node config/jest/index.js --updateSnapshot  --watch",
     "start": "webpack serve --config webpack/webpack.dev.js --hot",
+    "prod": "node server.js",
     "build": "webpack --config webpack/webpack.prod.js",
+    "start-prod": "pm2 start ./pm2/prod.json",
     "lint": "eslint .",
     "format": "prettier --write \"**/*.+(js|jsx|ts|json|css|md)\""
   },
@@ -23,6 +25,7 @@
     "i18next": "^19.9.2",
     "isomorphic-fetch": "^3.0.0",
     "lodash": "^4.17.21",
+    "pm2": "^5.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet-async": "^1.0.9",
@@ -49,6 +52,8 @@
     "copy-webpack-plugin": "^8.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^5.1.2",
+    "dotenv": "^8.2.0",
+    "dotenv-expand": "^5.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.4.3",
     "eslint": "^7.21.0",
@@ -77,6 +82,7 @@
     "prettier": "^2.2.1",
     "react-dev-utils": "^11.0.4",
     "react-test-renderer": "^17.0.2",
+    "redux-devtools-extension": "^2.13.9",
     "resolve-url-loader": "^3.1.2",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
@@ -88,9 +94,6 @@
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2",
     "webpack-manifest-plugin": "^3.1.0",
-    "webpack-nano": "^1.1.1",
-    "dotenv": "^8.2.0",
-    "dotenv-expand": "^5.1.0",
-    "redux-devtools-extension": "^2.13.9"
+    "webpack-nano": "^1.1.1"
   }
 }

@@ -29,15 +29,6 @@ module.exports = {
     'no-console': 'off',
     'react-hooks/rules-of-hooks': 'warn',
     'react-hooks/exhaustive-deps': 'warn',
-    // semi: [2, 'always'],
-    camelcase: 'warn',
-    indent: [
-      'warn',
-      2,
-      {
-        SwitchCase: 1,
-      },
-    ],
   },
   // Fix warning https://github.com/yannickcr/eslint-plugin-react#configuration
   settings: {
