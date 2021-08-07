@@ -53,3 +53,20 @@ export const getHeaders = (options = {}) =>
   );
 
 export const isBrowser = typeof window !== 'undefined';
+
+export const scrollTo = (element, ...rest) => {
+  // const isIE = detectIE()
+  const supportsNativeSmoothScroll =
+    'scrollBehavior' in document.documentElement.style;
+
+  if (!supportsNativeSmoothScroll) {
+    const [x, y] = rest;
+    const offsetTop = x?.top || x || 0;
+    const offsetLeft = x?.left || y || 0;
+
+    element.scrollTop = offsetTop;
+    element.scrollLeft = offsetLeft;
+  } else {
+    element.scrollTo(...rest);
+  }
+};
