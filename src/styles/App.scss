@@ -5,21 +5,19 @@
 */
 // Generate breakpoints function
 @import './breakpoints';
-
 // Generate row and col (Depending into breakpoints.scss)
 @import './grid.scss';
-
 // Generate container (Depending into breakpoints.scss)
 @import './container';
 /*
  * END CSS BOOTSTRAP
 */
 
-// system color
+@import './mixin';
 @import './color';
-
-// custom class
 @import './utils';
+@import './reset';
+@import './typography.scss';
 
 // load all component style
 @import '../components/**/*.scss';

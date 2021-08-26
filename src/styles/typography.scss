@@ -1,0 +1,132 @@
+@mixin typo($font-size, $font-weight, $line-height) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+.display-7 {
+  @include typo(12px, 500, 16px);
+}
+.display-6 {
+  @include typo(14px, 500, 18px);
+}
+.display-5 {
+  @include typo(16px, 500, 22px);
+}
+.display-4 {
+  @include typo(36px, 500, 44px);
+}
+.display-3 {
+  @include typo(44px, 500, 52px);
+}
+.display-2 {
+  @include typo(52px, 500, 64px);
+}
+.display-1 {
+  @include typo(96px, 500, 112px);
+}
+
+.heading-6 {
+  @include typo(20px, 600, 30px);
+}
+.heading-5 {
+  @include typo(24px, 600, 36px);
+}
+.heading-4 {
+  @include typo(28px, 600, 40px);
+}
+.heading-3 {
+  @include typo(32px, 600, 44px);
+}
+.heading-2 {
+  @include typo(36px, 600, 44px);
+}
+.heading-1 {
+  @include typo(40px, 600, 52px);
+}
+
+.label-4 {
+  @include typo(12px, 500, 16px);
+}
+.label-3 {
+  @include typo(14px, 500, 20px);
+}
+.label-2 {
+  @include typo(16px, 500, 24px);
+}
+.label-1 {
+  @include typo(18px, 500, 24px);
+}
+
+.paragraph-4 {
+  @include typo(12px, 400, 20px);
+}
+.paragraph-3,
+.paragraph-small {
+  @include typo(14px, 400, 20px);
+}
+.paragraph-2 {
+  @include typo(16px, 400, 24px);
+}
+.paragraph-1 {
+  @include typo(18px, 400, 28px);
+}
+
+@include ipad {
+  .m-heading-xs {
+    @include typo(18px, 600, 28px);
+  }
+  .m-heading-s {
+    @include typo(20px, 600, 28px);
+  }
+  .m-heading-m {
+    @include typo(24px, 600, 32px);
+  }
+  .m-heading-l {
+    @include typo(28px, 600, 36px);
+  }
+  .m-heading-xl {
+    @include typo(32px, 600, 40px);
+  }
+  .m-heading-xxl {
+    @include typo(36px, 600, 44px);
+  }
+
+  .m-label-xs {
+    @include typo(12px, 500, 20px);
+  }
+  .m-label-s {
+    @include typo(14px, 500, 20px);
+  }
+  .m-label-m {
+    @include typo(16px, 500, 24px);
+  }
+  .m-label-l {
+    @include typo(18px, 500, 28px);
+  }
+  .m-label-xl {
+    @include typo(20px, 500, 28px);
+  }
+  .m-label-xxl {
+    @include typo(24px, 500, 32px);
+  }
+
+  .m-paragraph-xs {
+    @include typo(12px, 400, 20px);
+  }
+  .m-paragraph-s {
+    @include typo(14px, 400, 22px);
+  }
+  .m-paragraph-m {
+    @include typo(16px, 400, 24px);
+  }
+  .m-paragraph-l {
+    @include typo(18px, 400, 28px);
+  }
+  .m-paragraph-xl {
+    @include typo(20px, 400, 28px);
+  }
+  .m-paragraph-xxl {
+    @include typo(24px, 400, 28px);
+  }
+}

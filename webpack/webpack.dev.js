@@ -11,33 +11,40 @@ const paths = require('../config/paths');
 const REACT_APP_PORT = process.env.REACT_APP_PORT || 3000;
 const host = process.env.HOST || '0.0.0.0';
 
-const { appPublic, appHtml, appBuild } = paths;
+const { appHtml, appBuild } = paths;
 
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'cheap-module-source-map',
   devServer: {
-    contentBase: appPublic,
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false,
+      },
+      progress: true,
+    },
+    devMiddleware: {
+      stats: {
+        colors: true,
+        hash: false,
+        version: true,
+        timings: true,
+        assets: false,
+        chunks: false,
+        modules: false,
+        publicPath: false,
+      },
+    },
     host,
     hot: true,
     port: REACT_APP_PORT,
     historyApiFallback: true,
-    stats: {
-      colors: true,
-      hash: false,
-      version: true,
-      timings: true,
-      assets: false,
-      chunks: false,
-      modules: false,
-      publicPath: false,
-    },
-    after: () => {
+    onAfterSetupMiddleware: () => {
       openBrowser && openBrowser(`http://127.0.0.1:${REACT_APP_PORT}/`);
     },
-    onListening: function (server) {
-      const port = server.listeningApp.address().port;
-      console.log('Listening on port:', port);
+    onListening: function () {
+      console.log('Listening on port:', REACT_APP_PORT);
     },
   },
   plugins: [

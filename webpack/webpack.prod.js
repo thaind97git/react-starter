@@ -58,14 +58,30 @@ module.exports = merge(common, {
   ],
   output: {
     publicPath: '',
+    pathinfo: true,
     // There will be one main bundle, and one file per asynchronous chunk.
     // In development, it does not produce real files.
-    filename: 'static/js/[name].[contenthash:8].js',
+    filename: 'static/js/[name].[chunkhash].js',
     // There are also additional JS chunk files if you use code splitting.
-    chunkFilename: 'static/js/[name].[contenthash:8].chunk.js',
+    chunkFilename: 'static/js/[name].[chunkhash].chunk.js',
   },
   optimization: {
-    // minimize: true,
+    nodeEnv: 'production',
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      },
+    },
+    minimize: true,
     minimizer: [
       // This is only used in production mode
       new TerserPlugin({
